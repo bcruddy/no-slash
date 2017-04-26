@@ -1,0 +1,8 @@
+{
+  "name": "no-slash",
+  "version": "1.0.0",
+  "description": "express middleware to remove trailing slash",
+  "main": "index.js",
+  "author": "@bcruddy | github.com/bcruddy",
+  "license": "MIT"
+}
