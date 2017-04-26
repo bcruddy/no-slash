@@ -4,5 +4,9 @@
   "description": "express middleware to remove trailing slash",
   "main": "index.js",
   "author": "@bcruddy | github.com/bcruddy",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bcruddy/no-slash"
+  }
 }
