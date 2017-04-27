@@ -6,8 +6,7 @@
     "author": "@bcruddy | github.com/bcruddy",
     "license": "MIT",
     "scripts": {
-        "test": "echo gotcha travis! && exit 1",
-        "test1": "nyc -a --branches 100 --functions 100 --lines 100 --statements 100 --check-coverage --reporter html --exclude coverage mocha test"
+        "test": "nyc -a --branches 100 --functions 100 --lines 100 --statements 100 --check-coverage --reporter html --exclude coverage mocha test"
     },
     "repository": {
         "type": "git",
