@@ -1,5 +1,4 @@
-const expect = require('chai').expect,
-    express = require('express'),
+const express = require('express'),
     noSlash = require('../lib/'),
     request = require('supertest');
 
@@ -16,9 +15,23 @@ describe('the no-slash module', function () {
         app.enable('strict routing');
         app.use(noSlash());
 
+        app.get('', response);
+        app.get('/', response);
         app.get('/path', response);
         app.get('/path/more', response);
         app.post('/path', response);
+    });
+
+    it('GET - 200', done => {
+        request(app)
+            .get('')
+            .expect(200, done);
+    });
+
+    it('GET / - 200', done => {
+        request(app)
+            .get('/')
+            .expect(200, done);
     });
 
     it('GET /path - 200', done => {
