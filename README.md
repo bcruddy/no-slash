@@ -6,7 +6,8 @@ Express middleware for forcing no trailing url slash via redirect.
 Defaults to a 301, status code can be passed as an argument.
 
 ### Usage
-`$ yarn install no-slash --save` or `$ npm install no-slash --save`
+- Requires node 6+
+- `$ yarn install no-slash --save` or `$ npm install no-slash --save`
 
 ```javascript
 const express = require('express'),
