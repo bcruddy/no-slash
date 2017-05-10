@@ -3,20 +3,22 @@
     "version": "1.2.5",
     "description": "express middleware to remove trailing slash",
     "main": "lib/index.js",
-    "author": "@bcruddy | github.com/bcruddy",
+    "author": "Brian Ruddy <briancruddy@gmail.com>",
     "license": "MIT",
-    "engines" : {
+    "engines": {
         "node": ">=6"
     },
     "scripts": {
         "start": "node -e 'require(\"./test/app\").listen(3002)'",
-        "test": "nyc -a --branches 100 --functions 100 --lines 100 --statements 100 --check-coverage --reporter html --exclude coverage --exclude test mocha test"
+        "test": "nyc -a --branches 100 --functions 100 --lines 100 --statements 100 --check-coverage --reporter html --exclude coverage --exclude test mocha test",
+        "pretest": "eslint lib/*.js test/*.js"
     },
     "repository": {
         "type": "git",
         "url": "https://github.com/bcruddy/no-slash"
     },
     "devDependencies": {
+        "eslint": "^3.19.0",
         "express": "^4.15.2",
         "mocha": "^3.3.0",
         "nyc": "^10.2.0",
