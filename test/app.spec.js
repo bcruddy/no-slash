@@ -1,27 +1,7 @@
-const express = require('express'),
-    noSlash = require('../lib/'),
+const app = require('./app'),
     request = require('supertest');
 
 describe('the no-slash module', function () {
-    let app;
-
-    beforeEach(() => {
-        const response = (req, res) => {
-            res.json({msg: 'done'});
-        };
-
-        app = express();
-
-        app.enable('strict routing');
-        app.use(noSlash());
-
-        app.get('', response);
-        app.get('/', response);
-        app.get('/path', response);
-        app.get('/path/more', response);
-        app.post('/path', response);
-    });
-
     it('GET - 200', done => {
         request(app)
             .get('')

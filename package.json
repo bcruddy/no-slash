@@ -9,6 +9,7 @@
         "node": ">=6"
     },
     "scripts": {
+        "start": "node -e 'require(\"./test/app\").listen(3002)'",
         "test": "nyc -a --branches 100 --functions 100 --lines 100 --statements 100 --check-coverage --reporter html --exclude coverage --exclude test mocha test"
     },
     "repository": {
