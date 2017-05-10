@@ -1,10 +1,13 @@
 {
     "name": "no-slash",
-    "version": "1.2.4",
+    "version": "1.2.5",
     "description": "express middleware to remove trailing slash",
     "main": "lib/index.js",
     "author": "@bcruddy | github.com/bcruddy",
     "license": "MIT",
+    "engines" : {
+        "node": ">=6"
+    },
     "scripts": {
         "test": "nyc -a --branches 100 --functions 100 --lines 100 --statements 100 --check-coverage --reporter html --exclude coverage --exclude test mocha test"
     },
