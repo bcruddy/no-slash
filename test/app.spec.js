@@ -1,81 +1,94 @@
-const express = require('express'),
-    noSlash = require('../lib/'),
+const App = require('./app'),
     request = require('supertest');
 
 describe('the no-slash module', function () {
     let app;
 
-    beforeEach(() => {
-        const response = (req, res) => {
-            res.json({msg: 'done'});
-        };
-
-        app = express();
-
-        app.enable('strict routing');
-        app.use(noSlash());
-
-        app.get('', response);
-        app.get('/', response);
-        app.get('/path', response);
-        app.get('/path/more', response);
-        app.post('/path', response);
+    before(() => {
+        app = App();
     });
 
-    it('GET - 200', done => {
-        request(app)
-            .get('')
-            .expect(200, done);
+    describe('returns 200', function () {
+        it('GET /', done => {
+            request(app)
+                .get('/')
+                .expect(200, done);
+        });
+
+        it('POST /path', done => {
+            request(app)
+                .post('/path')
+                .expect(200, done);
+        });
+
+        it('GET /path', done => {
+            request(app)
+                .get('/path')
+                .expect(200, done);
+        });
+
+        it('GET /path?a=b', done => {
+            request(app)
+                .get('/path?a=b')
+                .expect(200, done);
+        });
+
+        it('GET /path/more?a=b', done => {
+            request(app)
+                .get('/path/more?a=b')
+                .expect(200, done);
+        });
     });
 
-    it('GET / - 200', done => {
-        request(app)
-            .get('/')
-            .expect(200, done);
+    describe('returns 301 redirect', function () {
+        it('GET /path/', done => {
+            request(app)
+                .get('/path/')
+                .expect('location', '/path')
+                .expect(301, done);
+        });
+
+        it('GET /path/?a=b', done => {
+            request(app)
+                .get('/path/?a=b')
+                .expect('location', '/path?a=b')
+                .expect(301, done);
+        });
+
+        it('GET /path/more/?a=b', done => {
+            request(app)
+                .get('/path/more/?a=b')
+                .expect('location', '/path/more?a=b')
+                .expect(301, done);
+        });
     });
 
-    it('GET /path - 200', done => {
-        request(app)
-            .get('/path')
-            .expect(200, done);
-    });
+    describe('returns 302 redirect', function () {
+        let app302;
 
-    it('GET /path/ - 301', done => {
-        request(app)
-            .get('/path/')
-            .expect('location', '/path')
-            .expect(301, done);
-    });
+        before(() => {
+            app302 = App(302);
+        });
 
-    it('GET /path?a=b - 200', done => {
-        request(app)
-            .get('/path?a=b')
-            .expect(200, done);
-    });
+        it('GET /path/', done => {
+            request(app302)
+                .get('/path/')
+                .expect('location', '/path')
+                .expect(302, done);
+        });
 
-    it('GET /path/?a=b - 301', done => {
-        request(app)
-            .get('/path/?a=b')
-            .expect('location', '/path?a=b')
-            .expect(301, done);
-    });
+        it('GET /path/?a=b', done => {
+            request(app302)
+                .get('/path/?a=b')
+                .expect('location', '/path?a=b')
+                .expect(302, done);
+        });
 
-    it('GET /path/more?a=b - 200', done => {
-        request(app)
-            .get('/path/more?a=b')
-            .expect(200, done);
-    });
-
-    it('GET /path/more/?a=b - 301', done => {
-        request(app)
-            .get('/path/more/?a=b')
-            .expect('location', '/path/more?a=b')
-            .expect(301, done);
-    });
-
-    it('POST /path - 200', done => {
-        request(app)
-            .post('/path')
-            .expect(200, done);
+        it('GET /path/more/?a=b', done => {
+            request(app302)
+                .get('/path/more/?a=b')
+                .expect('location', '/path/more?a=b')
+                .expect(302, done);
+        });
     });
 });
