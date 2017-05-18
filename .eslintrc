@@ -13,6 +13,7 @@
         "eol-last": ["error", "always"],
         "indent": ["error", 4],
         "no-multiple-empty-lines": "error",
-        "object-curly-spacing": ["error", "never"]
+        "object-curly-spacing": ["error", "never"],
+        "semi": ["error", "always"]
     }
 }
