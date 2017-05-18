@@ -1,10 +1,9 @@
 const express = require('express'),
-    noSlash = require('../lib'),
     response = (req, res) => {
         res.json({msg: 'done'});
     };
 
-module.exports = (statusCode) => {
+module.exports = (noSlash, statusCode) => {
     statusCode = statusCode || undefined;
 
     return express()
