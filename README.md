@@ -7,7 +7,7 @@ Defaults to a 301, status code can be passed as an argument.
 
 ### Usage
 - node 6+ recommended, for node < 6, an ES5 module is available at `lib/es5.js`.
-- `$ yarn install no-slash --save` or `$ npm install no-slash --save`
+- `$ yarn add no-slash` or `$ npm install no-slash --save`
 
 ```javascript
 const express = require('express'),
