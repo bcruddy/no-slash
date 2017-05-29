@@ -7,7 +7,7 @@ const App = require('./app'),
     describe(`the no-slash module - ${index}`, function () {
         let app;
 
-        before(() => {
+        beforeAll(() => {
             app = App(noSlashModule);
         });
 
@@ -69,7 +69,7 @@ const App = require('./app'),
         describe('returns 302 redirect', function () {
             let app302;
 
-            before(() => {
+            beforeAll(() => {
                 app302 = App(noSlashModule, 302);
             });
 
