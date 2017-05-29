@@ -10,7 +10,6 @@
     },
     "scripts": {
         "start": "node -e 'require(\"./test/app\").listen(3002)'",
-        "test2": "nyc -a --branches 100 --functions 100 --lines 100 --statements 100 --check-coverage --reporter html --exclude coverage --exclude test mocha test",
         "test": "jest --config=jest.config.json --no-cache",
         "pretest": "eslint lib/*.js test/*.js"
     },
