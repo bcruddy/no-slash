@@ -1,6 +1,6 @@
 {
     "name": "no-slash",
-    "version": "1.2.10",
+    "version": "1.2.11",
     "description": "express middleware to remove trailing slash",
     "main": "lib/index.js",
     "author": "Brian Ruddy <briancruddy@gmail.com>",
