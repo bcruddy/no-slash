@@ -26,3 +26,11 @@ var express = require('express'),
 
 app.use(noSlash());
 ```
+
+### Contributing
+Feel free to fork and submit a PR. Please reference an issue in your PR to simplify tracking them (create one if it doesn't exist, feature or bug).
+
+- node v8, npm v5
+- Tests are run with [jest](https://facebook.github.io/jest/), 100% coverage is required
+- Linting with [eslint](http://eslint.org/)
+- TravisCI for deploy to npm
