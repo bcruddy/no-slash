@@ -9,4 +9,5 @@ deploy:
   api_key:
     secure: klXCgC8DTipZgfaKlFZ+UEEyCGnwUcAF2x+XIautMarAud+DhKZyR9D3GKxcuinpq0+4ru7cX1P3LV13f1HWoQjXrqcEPceaox03An/rPZ0KJL9ghrYkLhtvz4u+rNAhTeot0dOhariPQlF+p+T9FJpFiZIFpCC6N+hoqJ4C3AZ/3EfRpiyb6Fxg1v1OXbkPCluAg8TIhRTy91kug+DCmh4N0SIBFBjkuO8/jDC5eC+OCvhzAB2wCPOp0dS5paAWdQuFLNTseCLQ2eLq4qxnBdOMTVAKYRa1YKoWK4b8qraPgCTf8TSTpusf7NyHkStydw00M72iQItq01KlBLKPJfs2zV4pl5s1VZsdbxz6P/+nR/nxIv54l1bb/Uuyz3dsVR8XD4clVR/ue9REYeNQ1LrIEVymblYz/njnHHTQQ5McEFRM82zPQ8TjcRaCTOKpYilgcd8+/Bbpx1CbaRwnIWcwmFtDSdzhyFyYE4FUtE0QZs0kht/2ybnkl0Lmr34Aw9lEFX3B5dd1IhQgknuhbPeDSbgL2/hjCwEzjv2JojzaGoysxa1MP/rYTuPTnKhEp51atlItD1e/ebGWq0KVrjAvI6Lqran/cYx+qeEx+HFVyVbAWX9DVcNBjhySd7gSuBT+vfPnDyhjpE46cQMHraE8gzGySMVv8bWIumKCWHM=
   on:
+    branch: master
     repo: bcruddy/no-slash
